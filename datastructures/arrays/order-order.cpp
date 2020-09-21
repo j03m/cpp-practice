@@ -1,35 +1,52 @@
 #include <iostream>
+#include <deque>
 #include <vector>
 #include <map>
+using namespace std;
 
+bool verifyOrders(vector<int> &served, deque<int> &dineIn, deque<int> &takeOut){
+    for (int orderId : served){
+        if (dineIn.size() > 0 && orderId == dineIn[0]){
+            dineIn.pop_front();
+        }
+        else if (takeOut.size() > 0 && orderId == takeOut[0]){
+            takeOut.pop_front();
+        }
+        else {
+            return false;
+        }
+    }
 
-bool verifyOrders(const vector<int> &takeOut, const vector<int> &dineIn, const vector<int> &served){
-    //1 pass - build dictionary of positions o(n) time space
+    if (dineIn.size() != 0 || takeOut.size() != 0) {
+        return false;
+    }
 
-    //scan each register make sure registered position increases in order
-
-    //1: 1, 3: 5, 5: 4] - fail
-    //1: 1, 3: 5, 5: 6] - pass
-
-
+    return true;
 }
 
 bool case1(){
-    vector<int> takeOut { 1, 3, 5 };
-    vector<int> dineIn { 2, 4, 6 };
-    vector<int> served { 1, 2, 4, 6, 5, 4 };
-    return verifyOrder(takeOut, dineIn, served)
+    deque<int> takeOut { 1, 3, 5 };
+    deque<int> dineIn { 2, 4, 6 };
+    vector<int> served { 1, 2, 4, 6, 5, 3 };
+    return verifyOrders(served, dineIn, takeOut);
 }
 
 bool case2(){
-    vector<int> takeOut { 17, 8, 24 };
-    vector<int> dineIn { 12, 19, 2 };
+    deque<int> takeOut { 17, 8, 24 };
+    deque<int> dineIn { 12, 19, 2 };
     vector<int> served { 17, 8, 12, 19, 24, 2 };
-    return verifyOrder(takeOut, dineIn, served)
+    return verifyOrders(served, dineIn, takeOut);
 }
 
+bool case3(){
+    deque<int> takeOut { 17, 8, 24 };
+    deque<int> dineIn { 12, 19, 2 };
+    vector<int> served { 17, 8, 12, 24, 2 };
+    return verifyOrders(served, dineIn, takeOut);
+}
 
 int main(){
-    cout << case1(); << "\n";
-    cout << case2(); << "\n";
+    cout << case1() << "\n";
+    cout << case2() << "\n";
+    cout << case3() << "\n";
 }

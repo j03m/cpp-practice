@@ -4,9 +4,6 @@
 #include<stdexcept>
 using namespace std;
 
-
-
-
 int main(){
 
     vector<int> numbers({1, 10, -5, 1, -100});

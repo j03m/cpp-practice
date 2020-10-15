@@ -2,15 +2,15 @@
 #include<vector>
 #include<iostream>
 #include<utility>
-
+using namespace std;
 /** todo: what is going on here **/
 size_t getRandom(size_t floor, size_t ceiling)
 {
     static random_device rdev;
     static default_random_engine generator(rdev());
-    static uniform_real_distribution generator(rdev());
+    static uniform_real_distribution<double> distribution(0.0, 1.0);
     double value = distribution(generator);
-    return static_case<size_t>(value * (ceiling - floor +1)) + floor;
+    return static_cast<size_t>(value * (ceiling - floor + 1)) + floor;
 }
 
 void shuffle(vector<int>& theVector)
@@ -29,7 +29,7 @@ int main()
 {
     vector<int> numbers { 1, 2, 3, 4, 5 };
     shuffle(numbers);
-    for(number : numbers){
+    for(int number : numbers){
         cout << number << ", ";
     }
     cout << "\n";

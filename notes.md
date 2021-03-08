@@ -43,6 +43,8 @@ set of outcomes that is SIZE ^ SIZE each being equally probably. But our vector 
 shuffle is not uniform. This means "it is a mostly-uniform shuffle where an item is less likely to stay where it started than it is to end up in any 
 given slot. Each item should have the same probability of ending up in each spot, including the spot where it starts.". See greedy/in-place-shuffle.cpp
 
+
+
 # Partial sorts
 
 When given a partially sorted array of two out of order chunks, you can assuming 0-N-1 are increasing in order and N-M are increasing in order and that
@@ -184,3 +186,28 @@ Both BFS and DFS will eventually find a path if one exists. The difference betwe
     
     TODO: Next understand the runtime for graph coloring
     TODO: Move on to shortest path
+    
+    
+### Recursion
+
+A recursive stack of N gives you a memory cost of O(N)
+
+Recursive fibonacci is 2^n because it forks out like a binary tree
+
+Naive impl:
+```
+int fib(int n)
+{
+    if (n == 0 || n == 1) {
+        return n;
+    }
+    return fib(n - 1) + fib(n - 2);
+}
+```
+
+Re-review memoize in c++
+
+### Stacks
+
+You can always reverse a stack with another stack by popping off and pushing on stack 2
+ 

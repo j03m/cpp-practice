@@ -16,9 +16,7 @@ class Meeting {
 
 
 
-bool compareStart (Meeting &m1, Meeting &m2){
-    return m1.start < m2.start;
-}
+bool compareStart (Meeting &m1, Meeting &m2){ return m1.start < m2.start; }
 
 
 

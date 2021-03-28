@@ -80,10 +80,10 @@ class Solution {
 
 int main(){
     unordered_map<int, vector<pair<int, int>>> graph;
-    graph[0] = { make_pair(1, 5), make_pair(2, 1) };
-    graph[1] = { make_pair(3, 1), make_pair(4, 2) };
+    graph[0] = { make_pair(1, 5), make_pair(2, 6) };
+    graph[1] = { make_pair(3, 7), make_pair(4, 2) };
     graph[2] = { make_pair(5, 5), make_pair(6, 1) };
-    graph[3] = { make_pair(7, 1)};
+    graph[3] = { make_pair(7, 7)};
     graph[4] = {};
     graph[5] = {};
     graph[6] = { make_pair(7, 1) };

@@ -12,13 +12,7 @@ class Meeting {
     int end;
 };
 
-
-
-
-
 bool compareStart (Meeting &m1, Meeting &m2){ return m1.start < m2.start; }
-
-
 
 Meeting doMerge(Meeting m1, Meeting m2){
     Meeting merged;
@@ -36,9 +30,6 @@ int main()
     meetings.push_back(Meeting(4,8));
     meetings.push_back(Meeting(3,5));
     meetings.push_back(Meeting(0,1));
-
-
-
 
     vector<Meeting> sortedMeetings(meetings);
     sort(sortedMeetings.begin(), sortedMeetings.end(), compareStart);

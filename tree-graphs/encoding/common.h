@@ -4,6 +4,8 @@
 #include<algorithm>
 #include<string>
 
+using namespace std;
+
 typedef unordered_map<int, vector<int>> Graph;
 
 class Node {

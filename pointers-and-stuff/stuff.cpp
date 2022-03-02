@@ -36,4 +36,10 @@ int main() {
 
     cout << st.top() << "\n";
 
+    int *i;
+    *i = 10;
+
+    cout << i << "\n";
+    cout << *i << "\n";
+
 }

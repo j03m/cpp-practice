@@ -1,0 +1,1 @@
+Node getRootedNode(Graph &g, int id, Node *parent);

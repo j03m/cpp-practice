@@ -18,7 +18,7 @@ class Solution {
 
         bool bfs(int start, int end){
             queue<int> q;
-            q.push(start);
+            q.push(start);a
             distance[start] = 0;
             while(!q.empty()){
                 int node = q.front();

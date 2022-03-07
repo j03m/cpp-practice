@@ -1,0 +1,1 @@
+string encodeTree(Node &node);

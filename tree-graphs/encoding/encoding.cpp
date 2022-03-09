@@ -1,6 +1,7 @@
-#include <encoding.h>
+#include "encoding.h"
 #include <algorithm>
-
+#include <string>
+using namespace std;
 string encodeTree(Node &node){
 
     vector<string> labels;
@@ -13,7 +14,7 @@ string encodeTree(Node &node){
 
     //construct a result
     string result = "";
-    for(auto label in labels){
+    for(auto label : labels){
         result+=label; //todo: is this inefficient does it make a copy?
     }
 

@@ -1,5 +1,5 @@
-#include <common.h>
-#include <center.h>
+#include "common.h"
+#include "center.h"
 
 /*
     To find the center of the graph we will detect leaf nodes by looking at their total number of children. A leaf node

@@ -1,5 +1,4 @@
-#include<rooting.h>
-#include<common.h>
+#include"rooting.h"
 
 /**
   Recreate an undirected graph as a tree, starting from the supplied node
@@ -13,7 +12,7 @@ Node getRootedNode(Graph &g, int id, Node *parent){
     node.id = id;
     node.parent = parent;
     for(auto child : g[id]){
-        if (parent !== nullptr && child != parent->id){
+        if (parent == nullptr || child != parent->id){
             node.children.push_back(getRootedNode(g, child, &node));
         }
     }

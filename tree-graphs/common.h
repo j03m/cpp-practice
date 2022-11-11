@@ -7,7 +7,21 @@
 
 using namespace std;
 
+class WeightedNode {
+    public:
+        int id;
+        int weight;
+
+        WeightedNode(int _id, int _weight):
+         id(_id),
+         weight(_weight){}
+};
+
+
+typedef vector<WeightedNode>  WeightedNodeList;
 typedef unordered_map<int, vector<int>> Graph;
+typedef unordered_map<int, WeightedNodeList> WeightedGraph;
+typedef unordered_map<int, int> Path;
 
 class Node {
     public:
